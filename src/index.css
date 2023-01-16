@@ -1,13 +1,106 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  @apply flex items-center justify-center min-h-screen;
+  background-color: rgba(239, 239, 239, 1);
+}
+.slide-container{
+  @apply px-0 py-10 w-full;
+  max-width: 1120px;
+}
+.slide-content{
+  @apply my-0 mx-10 overflow-hidden;
+  border-radius: 25px;
+}
+.card{
+  @apply bg-white;
+  border-radius: 25px;
+}
+.image-content,.card-content{
+  @apply flex flex-col items-center py-2 px-3;
+}
+.image-content{
+  @apply px-0 py-6 relative;
+  row-gap: 5px;
+}
+.overlay{
+  @apply h-full absolute top-0 left-0 w-full;
+  background-color: rgba(64, 112, 244, 1);
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,.overlay::after{
+  @apply h-10 absolute right-0 w-10;
+  content: "";
+  bottom: -40px;
+  background-color: rgba(64, 112, 244, 1);
+}
+.overlay::after{
+  @apply bg-white;
+  border-radius: 0 25px 0 0;
+}
+.card-image{
+  @apply bg-white h-40 p-1 relative w-40;
+  border-radius: 50%;
+}
+.card-image .card-img{
+  @apply border-solid border-4 h-full object-cover w-full;
+  border-radius: 50%;
+  border-color: rgba(64, 112, 244, 1);
+}
+.name{
+  @apply font-medium text-lg;
+  color: rgba(51, 51, 51, 1);
+}
+.description{
+  @apply text-sm text-center;
+  color: rgba(112, 112, 112, 1);
+}
+.button{
+  @apply rounded-md cursor-pointer text-base m-3 py-2 px-4 text-white;
+  background-color: rgba(64, 112, 244, 1);
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #265df2;
+}
+.swiper-navBtn{
+  color: #6e93f7;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070f4;
+}
+.swiper-navBtn::before,.swiper-navBtn::after{
+  font-size: 40px;
+}
+.swiper-button-next{
+  right: 0;
+}
+.swiper-button-prev{
+  left: 0;
+}
+.swiper-pagination-bullet{
+  margin-bottom: 1vh;
+  background-color: #6e93f7;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #4070f4;
+}
+@media screen and (max-width:768px){
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+
 }
