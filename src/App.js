@@ -7,6 +7,7 @@ import { Navigation, Pagination, A11y } from 'swiper';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
 function App() {
   return (
     <div className='slide-container swiper'>
@@ -23,11 +24,14 @@ function App() {
           <SwiperSlide><Card data={{imgSrc:mypic}}/></SwiperSlide>
           <SwiperSlide><Card data={{imgSrc:mypic}}/></SwiperSlide>
         </Swiper>
+
       </div>
       </div>
+
       <div class="swiper-button-next swiper-navBtn"></div>
     <div class="swiper-button-prev swiper-navBtn"></div>
     <div class="swiper-pagination"></div>
+
     </div>
   );
 }
